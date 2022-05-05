@@ -49,7 +49,6 @@ def random_ld_user():
     }
     return user
 
-print(random_ld_user())
 
 '''
 Conversion true or false calculator.
