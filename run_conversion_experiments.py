@@ -31,16 +31,11 @@ ldclient.set_config(Config(SDK_KEY))
 '''
 Construct and return a random user
 '''
-def random_plan():
-    return random.choice(["free", "silver", "gold"])
-
-def random_email_domain():
-    return random.choice(["@gmail.com", "@yahoo.com", "@hotmail.com"])
-
 def random_ld_user():
     first_name = names.get_first_name()
     last_name = names.get_last_name()
-    email = first_name + "." + last_name + random_email_domain()
+    plan = random.choice(["free", "silver", "gold"])
+    email = first_name + "." + last_name + random.choice(["@gmail.com", "@yahoo.com", "@hotmail.com"])
 
     user = {
         "key": str(uuid.uuid4()),
@@ -49,11 +44,12 @@ def random_ld_user():
         "email": email,
         "country": random_country(),
         "custom": {
-          "plan": random_plan()
+          "plan": plan
         }
     }
     return user
 
+print(random_ld_user())
 
 '''
 Conversion true or false calculator.
