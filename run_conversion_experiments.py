@@ -89,6 +89,7 @@ callLD()
 
 
 '''
-Responsibly close the LD Client
+Flush any pending analytics events & the responsibly close the LD Client
 '''
+ldclient.get().flush()
 ldclient.get().close()
