@@ -26,6 +26,8 @@ NUMBER_OF_ITERATIONS = os.environ.get('NUMBER_OF_ITERATIONS')
 Initialize the LaunchDarkly SDK
 '''
 ldclient.set_config(Config(SDK_KEY))
+# ldclient.set_config(Config(SDK_KEY,events_uri="http://0.0.0.0:8080"))
+# The above is a relic from playing with Vector
 
 
 '''
